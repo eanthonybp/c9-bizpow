@@ -1,0 +1,18 @@
+{% extends 'website/base_layout.html' %}
+
+{% block content %}
+
+ <div class="container">  
+    <div class = "jumbotron">
+        <h2>Create New User</h2>
+        <form action="account/createuser" method="post">
+            <div class="form-group">
+                {% csrf_token %}
+                {{ form }}
+            </div>
+            <input type="submit" value="Create"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

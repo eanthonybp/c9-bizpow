@@ -1,0 +1,39 @@
+{% extends 'website/base_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p><img src="http://www.bizpow.com/Logo-v2-trans.png" width=311 height=76> <font size=+2 class="text-muted">Alpha</font></p>
+          <p><h3>The hidden power of business today is the ability to collect, analyze and use data to create a competitive edge. That edge lets them know their customer better, avoid market fluctuations and move the business forward.  BizPow was founded to enable small and medium sized business with a set of tools to create that competitive edge using their data.</h3></p>
+
+        </div>
+        <div class="col-md-6"><img src="{% static "website/images/paper-3268752_1920.jpg" %}" class="img-responsive">
+        </div>
+      </div>
+      <div class="row" style="padding: 30px">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h2 class="text-success">Help us Build the Future of Data Analytics for Small & Medium Sized Businesses</h2>
+            <div class="container">
+              <form>
+                <div class="form-group">
+                  <label for="question1">What is your biggest problem that data could solve?</label>
+                  <input type="text" class="form-control" id="question1" placeholder="Answer">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
