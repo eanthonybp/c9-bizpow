@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # Create your views here.
 def homepage(request):
-    return(render(request,'website/index.html'))
+    loginform = AuthenticationForm()
+    return(render(request,'website/index.html', {'loginform':loginform}))
     
 def createuser(request):
     if request.method == 'POST':
@@ -23,6 +24,6 @@ def login(request):
         if form.is_valid():
             return render(request, 'website:homepage')
         else:
-            form=AuthenticationForm()
+            loginform=AuthenticationForm()
             
-    return render(request,'website:login')
+    return render(request,'website:homepage', {'loginform':loginform})

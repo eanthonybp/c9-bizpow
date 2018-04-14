@@ -5,20 +5,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
       body {padding-top: 100px;}
-    
-      .form-group input{
-        display: block;
-        margin: 0;
-        padding: 0;
-      }
+
       .form-group label{
-        padding-top: 20px;
-      }
-      
-      .form-group .helptext {
-        display: block;
-        margin: 0;
-        padding: 0;
+        padding-right: 5px;
       }
 
     </style>
@@ -36,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="http://www.bizpow.com/Logo-v2-trans.png" width=115 height=30></a>
+          <a class="navbar-brand" href="{% url 'website:homepage' %}"><img src="http://www.bizpow.com/Logo-v2-trans.png" width=115 height=30></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,6 +45,14 @@
               </ul>
             </li>
           </ul>
+          <div class="wrapper">
+            <form class ="navbar-form navbar-right" style="padding: 10px; color: white;" action="account/createuser" method="post">
+              <div class="form-group">
+                {% csrf_token %}
+                {{ loginform }}
+              </div>
+            </form>
+          </div>
 <!-- LOGIN FORM
           <form class="navbar-form navbar-right" style="padding-top: 5px">
             <div class="form-group">
