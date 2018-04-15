@@ -6,10 +6,32 @@
     <style>
       body {padding-top: 100px;}
 
-      .form-group label{
+      .form-nav label{
         padding-right: 5px;
+        color: gray;
+      }
+      
+      .form-nav input{
+        margin-right: 10px;
+        color: green;
       }
 
+      .form-group input{
+        display: block;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        border: 0;
+      }
+      .form-group label{
+        display: block;
+        padding-top: 10px;
+      }
+      .form-group helptext{
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+      }
+      
     </style>
     <title></title>
     {% load static %}
@@ -45,14 +67,24 @@
               </ul>
             </li>
           </ul>
-          <div class="wrapper">
-            <form class ="navbar-form navbar-right" style="padding: 10px; color: white;" action="account/createuser" method="post">
-              <div class="form-group">
+          {% if user.is_authenticated %}
+            <form class ="navbar-form navbar-right" style="padding: 10px;" action="logout/" method="post">
+              <div class="form-nav">
                 {% csrf_token %}
-                {{ loginform }}
+                <label>Welcome, {{ user.username }}.</label>W
+                <button type="submit" class="btn btn-success">Logout</button>
               </div>
             </form>
-          </div>
+          {% else %}
+            <form class ="navbar-form navbar-right" style="padding: 10px;" action="login/" method="post">
+              <div class="form-nav">
+                {% csrf_token %}
+                {{ loginform}}
+                <button type="submit" class="btn btn-success">Login</button>
+              </div>
+            </form>
+          {% endif %}
+
 <!-- LOGIN FORM
           <form class="navbar-form navbar-right" style="padding-top: 5px">
             <div class="form-group">

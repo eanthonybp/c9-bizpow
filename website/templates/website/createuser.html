@@ -8,7 +8,7 @@
         <form action="account/createuser" method="post">
             <div class="form-group">
                 {% csrf_token %}
-                {{ form }}
+                {{ form|removetags:"br" }}
             </div>
             <input type="submit" value="Create"/>
         </form>
