@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from .forms import SurveyForm
 
 # Create your views here.
 def homepage(request):
     loginform = AuthenticationForm()
-    return(render(request,'website/index.html', {'loginform':loginform}))
+    surveyform = SurveyForm() 
+    return(render(request,'website/index.html', {'loginform':loginform, 'surveyform':surveyform}))
     
 def createuser(request):
     if request.method == 'POST':
@@ -17,7 +19,7 @@ def createuser(request):
     else:
         form = UserCreationForm()
         loginform=AuthenticationForm()
-            
+   
     return render(request,'website/createuser.html',{'form':form, 'loginform':loginform})
 
 def login_user(request):
@@ -34,4 +36,12 @@ def login_user(request):
     
 def logout_user(request):
     logout(request)
+    return redirect('website:homepage')
+    
+def savesurvey(request):
+    if request.POST:
+        form = SurveyForm(request.POST)
+        if form.is_valid:
+            form.save()
+    
     return redirect('website:homepage')
