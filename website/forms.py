@@ -7,7 +7,7 @@ class SurveyForm(forms.ModelForm):
         model = Survey
         fields = ['biggest_problem', 'email_contact']
         widgets = {
-            'biggest_problem': forms.TextInput(attrs={'size': '100'}),
+            'biggest_problem': forms.TextInput(attrs={'size': '100',}),
         }
         labels = {
             'biggest_problem': 'What is your biggest problem that you think data could solve?',
