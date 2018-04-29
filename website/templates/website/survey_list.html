@@ -1,0 +1,24 @@
+{% extends 'website/base_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class='container'>
+<h1>Survey Results</h1>
+
+<div class="surveyListing">
+    {% for survey in surveys %}
+
+        <div class='survey'>
+            <h3>{{ survey.biggest_problem }}</h3>
+            Email: {{ survey.email_contact }}
+        </div>
+        <hr class="col-xs-12">
+    {% endfor %}
+    
+</div>
+
+</div>
+
+{% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from .forms import SurveyForm
+from .models import Survey
 
 # Create your views here.
 def homepage(request):
@@ -45,3 +46,7 @@ def savesurvey(request):
             form.save()
     
     return redirect('website:homepage')
+    
+def surveyresults(request):
+    surveys = Survey.objects.all()
+    return render(request,'website/survey_list.html',{'surveys':surveys})
