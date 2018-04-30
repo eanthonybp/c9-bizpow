@@ -6,6 +6,7 @@
 
 <div class='container'>
 <h1>Survey Results</h1>
+<a href="{% url 'website:exportcsv' %}">Download CSV</a>
 
 <div class="surveyListing">
     {% for survey in surveys %}

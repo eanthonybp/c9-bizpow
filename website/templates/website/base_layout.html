@@ -57,8 +57,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav" style="padding-top: 10px">
             <li><a href="{% url 'website:homepage' %}">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{% url 'website:about' %}">About</a></li>
+            <li><a href="{% url 'website:contactus' %}">Contact Us</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -78,8 +78,8 @@
                 <li><a href="{% url 'website:logout' %}">Logout</a></li>
                 {% if user.is_superuser %}
                 <li class="divider"></li>
-                <li><a href="/admin/">Django Admin</a></li>
-                <li><a href="#">Survey Results</a></li>
+                <li><a href="/admin/" target="_blank">Django Admin</a></li>
+                <li><a href="{% url 'website:surveyresults' %}">Survey Results</a></li>
                 {% endif %}
               </ul>
             </li>
