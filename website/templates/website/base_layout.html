@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" style="height:100%">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -40,7 +40,7 @@
     <title></title>
     {% load static %}
   </head>
-  <body>
+  <body  style="height:100%">
     <nav class="navbar navbar-inverse navbar-fixed-top"  style="min-height: 50px">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -105,36 +105,37 @@
     {% block content %}
     {% endblock %}
     
-     <footer class="page-footer navbar-bottom">  
-        <div class="container-fluid text-light" style="background: lightgray">
-          <div class="container">
-            <div class="row" style="padding-top: 20px; padding-bottom: 10px">
-              <div class="col-md-12 text-center">
-                <h4>Copyright &copy; 2018 BizPow</h4>
-              </div>
+    <div style='height:100%'></div>
+    <footer class="page-footer navbar-bottom">  
+      <div class="container-fluid text-light" style="background: lightgray">
+        <div class="container">
+          <div class="row" style="padding-top: 20px; padding-bottom: 10px">
+            <div class="col-md-12 text-center">
+              <h4>Copyright &copy; 2018 BizPow</h4>
             </div>
-            <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-              <div class="col-md-4 text-center">
-                <a href="https://www.facebook.com/BizpowSMB/">
-                <img src="{% static "website/images/Facebook-icon.png" %}" width=32px>
-                </a>
-                <h4>Facebook</h4>
-              </div>
-              <div class="col-md-4 text-center">
-                <a href="https://www.linkedin.com/in/esanthony/">
-                <img src="{% static "website/images/LinkedIn-icon.png" %}" width=32px>
-                </a>
-                <h4>LinkedIn</h4>
-              </div>
-              <div class="col-md-4 text-center">
-                <a href ='https://twitter.com/BizPowSMB'>
-                <img src="{% static "website/images/Twitter-icon.png" %}" width=32px>
-                </a>
-                <h4>Twitter</h4>
-              </div>
+          </div>
+          <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+            <div class="col-md-4 text-center">
+              <a href="https://www.facebook.com/BizpowSMB/">
+              <img src="{% static "website/images/Facebook-icon.png" %}" width=32px>
+              </a>
+              <h4>Facebook</h4>
+            </div>
+            <div class="col-md-4 text-center">
+              <a href="https://www.linkedin.com/in/esanthony/">
+              <img src="{% static "website/images/LinkedIn-icon.png" %}" width=32px>
+              </a>
+              <h4>LinkedIn</h4>
+            </div>
+            <div class="col-md-4 text-center">
+              <a href ='https://twitter.com/BizPowSMB'>
+              <img src="{% static "website/images/Twitter-icon.png" %}" width=32px>
+              </a>
+              <h4>Twitter</h4>
             </div>
           </div>
         </div>
+      </div>
     </footer> 
 
 

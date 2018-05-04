@@ -10,14 +10,13 @@
 
 <div class="surveyListing">
     {% for survey in surveys %}
-
+        <hr class="col-xs-12">
         <div class='survey'>
             <h3>{{ survey.biggest_problem }}</h3>
             Email: {{ survey.email_contact }}
         </div>
-        <hr class="col-xs-12">
     {% endfor %}
-    
+    <hr class="col-xs-12">
 </div>
 
 </div>

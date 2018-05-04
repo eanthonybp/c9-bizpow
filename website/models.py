@@ -10,4 +10,20 @@ class Survey(models.Model):
     def __str__(self):
         return self.email_contact + " : " + self.biggest_problem
     
-
+class UserProfile(models.Model):
+    firstName = models.CharField(max_length=25)
+    lastName = models.CharField(max_length=25)
+    emailAddress = models.EmailField()
+    phoneNumber = models.CharField(max_length=15)
+    created = models.DateTimeField(default=datetime.now)
+    account = models.ForeignKey('Account')
+    
+class Account(models.Model):
+    accountName = models.CharField(max_length=50)
+    industry = models.ForeignKey('Industry')
+    
+class Industry(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=254)
+    
+    
